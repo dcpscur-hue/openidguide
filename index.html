@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>大橋國小｜一年級家長 OpenID 登入指南</title>
+<style>
+:root{
+  --bg:#F3F7FA; --card:#FFFFFF; --ink:#16324F; --muted:#4A6178; --line:#D3DEE8;
+  --link:#0B5C9E; --accent:#F2B705; --on-accent:#16324F; --tint:#E6F0F7;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#0F1A24;--card:#17252F;--ink:#E6EEF5;--muted:#9DB2C4;--line:#2A3D4C;--link:#7DBBF0;--tint:#1E3342}
+}
+:root[data-theme="dark"]{--bg:#0F1A24;--card:#17252F;--ink:#E6EEF5;--muted:#9DB2C4;--line:#2A3D4C;--link:#7DBBF0;--tint:#1E3342}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei","Heiti TC",system-ui,sans-serif;
+  font-size:17px;line-height:1.75}
+main{max-width:640px;margin:0 auto;padding:28px 18px 48px}
+header{margin-bottom:22px}
+.school{margin:0 0 6px;color:var(--muted);font-size:15px;font-weight:600}
+h1{margin:0 0 10px;font-size:28px;line-height:1.35;font-weight:800}
+.lead{margin:0;color:var(--muted)}
+.note{margin:18px 0 22px;padding:12px 14px;background:var(--tint);border-left:5px solid var(--accent);border-radius:6px;font-size:15.5px}
+h2{margin:0 0 10px;font-size:19px}
+details{background:var(--card);border:1.5px solid var(--line);border-radius:12px;margin-bottom:12px;overflow:hidden}
+details[open]{border-color:var(--ink)}
+summary{list-style:none;cursor:pointer;padding:16px 18px;font-size:18px;font-weight:700;display:flex;align-items:center;gap:12px;min-height:56px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"";margin-left:auto;width:10px;height:10px;border-right:2.5px solid var(--muted);border-bottom:2.5px solid var(--muted);transform:rotate(45deg);transition:transform .2s;flex:none}
+details[open] summary::after{transform:rotate(-135deg)}
+summary:focus-visible,a:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.body{padding:2px 18px 18px;border-top:1px solid var(--line)}
+.body p{margin:12px 0 0}
+ol.steps{list-style:none;margin:14px 0 0;padding:0;counter-reset:s}
+ol.steps li{counter-increment:s;position:relative;padding-left:44px;margin-bottom:12px}
+ol.steps li::before{content:counter(s);position:absolute;left:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--ink);color:var(--bg);font-weight:700;font-size:15px;display:flex;align-items:center;justify-content:center;line-height:1}
+ul.plain{margin:12px 0 0;padding-left:22px}
+ul.plain li{margin-bottom:6px}
+.btn{display:inline-block;margin-top:14px;padding:13px 20px;background:var(--accent);color:var(--on-accent);font-weight:800;border-radius:10px;text-decoration:none;min-height:48px}
+.btn:hover{filter:brightness(.95)}
+a{color:var(--link)}
+.btn,.btn:visited{color:var(--on-accent)}
+.addr{font-size:14.5px;color:var(--muted);word-break:break-all;margin-top:8px}
+.safe{margin-top:26px;padding:16px 18px;background:var(--card);border:1.5px solid var(--line);border-radius:12px}
+.safe ul{margin:8px 0 0;padding-left:22px}
+footer{margin-top:26px;color:var(--muted);font-size:15px}
+@media (prefers-reduced-motion:reduce){summary::after{transition:none}}
+</style>
+</head>
+<body>
+<main>
+<header>
+  <p class="school">大橋國小 資訊組</p>
+  <h1>孩子的 OpenID，這樣登入</h1>
+  <p class="lead">一年級新生入學後，教育局會自動建立學生帳號。請點選下面符合您狀況的項目，會告訴您怎麼做。</p>
+</header>
+
+<p class="note">本頁不會要求輸入任何孩子的資料。需要輸入資料時，會帶您前往教育局的官方系統。</p>
+
+<details>
+  <summary>我不知道孩子的帳號是什麼</summary>
+  <div class="body">
+    <p>帳號由系統自動產生，格式是「st」加 7 位數字，例如 st1234567。可以在教育局的官方頁面查詢：</p>
+    <ol class="steps">
+      <li>打開「重設認證系統密碼」頁面。</li>
+      <li>輸入孩子的就讀學校、身分證字號、出生年月日和年班座號，勾選「我不是機器人」。</li>
+      <li>畫面會顯示孩子的帳號，請抄下來或拍照存好。</li>
+    </ol>
+    <a class="btn" href="https://estdpassport.tn.edu.tw/StdResetPW.aspx" target="_blank" rel="noopener">前往教育局查詢帳號</a>
+    <p class="addr">網址：estdpassport.tn.edu.tw</p>
+  </div>
+</details>
+
+<details>
+  <summary>忘記密碼，或第一次登入不知道密碼</summary>
+  <div class="body">
+    <p>不需要找學校，自己重新設定就可以：</p>
+    <ol class="steps">
+      <li>打開「重設認證系統密碼」頁面，輸入孩子的就讀學校、身分證字號、出生年月日和年班座號。</li>
+      <li>確認畫面上顯示的帳號正確，按下一步。</li>
+      <li>設定新密碼，必須同時包含英文字母和數字。</li>
+      <li>看到「修改成功」，就可以用新密碼登入了。</li>
+    </ol>
+    <a class="btn" href="https://estdpassport.tn.edu.tw/StdResetPW.aspx" target="_blank" rel="noopener">前往重設密碼</a>
+    <p>新密碼請妥善保管，不要告訴別人。</p>
+  </div>
+</details>
+
+<details>
+  <summary>孩子記不住帳號，有簡單的登入方式嗎</summary>
+  <div class="body">
+    <p>有。登入頁面提供「學生專用模式」，不用輸入 st 開頭的帳號，只要輸入「學校」和「年班座號」，再輸入密碼就能登入，比較適合低年級孩子。</p>
+    <a class="btn" href="https://estdpassport.tn.edu.tw/" target="_blank" rel="noopener">前往學生認證系統</a>
+  </div>
+</details>
+
+<details>
+  <summary>OpenID 可以用在哪裡</summary>
+  <div class="body">
+    <ul class="plain">
+      <li>教育部電子郵件</li>
+      <li>教育部 Google 教育版（免費）</li>
+      <li>台南市閱讀平台「布可星球」</li>
+      <li>因材網、均一、Pagamo、各版本教科書線上資源等學習平台</li>
+    </ul>
+    <p>孩子在台南市就讀國小、國中期間，都使用同一組帳號，不需要重新申請。轉學到外縣市或畢業後，帳號會隨學籍停用。</p>
+  </div>
+</details>
+
+<section class="safe">
+  <h2>安全小提醒</h2>
+  <ul>
+    <li>輸入孩子的資料前，請確認網址是 estdpassport.tn.edu.tw。</li>
+    <li>不要在他人轉傳的不明連結或網站填寫孩子的資料。</li>
+    <li>學校不會用電話、簡訊或通訊軟體向家長索取密碼。</li>
+  </ul>
+</section>
+
+<footer>還是登入不了？請洽大橋國小資訊組，分機 796 鄭老師。</footer>
+</main>
+</body>
+</html>
